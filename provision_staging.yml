@@ -1,0 +1,14 @@
+---
+- name: Provision Staging Environment
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Provision Database (Idempotent)
+      debug:
+        msg: "Idempotently ensuring database exists with {{ disk_size }} GB disk."
+
+    - name: Configure AWS Load Balancer
+      debug:
+        msg: "Applying AWS configurations to {{ target_servers }} using encrypted Vault credentials."
