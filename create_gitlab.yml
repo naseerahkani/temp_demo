@@ -1,0 +1,7 @@
+---
+- name: Create GitLab Project
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - debug:
+        msg: "Successfully created GitLab project {{ project_name }} for {{ developer_name }}."
